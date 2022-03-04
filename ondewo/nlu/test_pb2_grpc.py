@@ -14,6 +14,11 @@ class SimpleServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.RecieveTest = channel.unary_unary(
+                '/SimpleService/RecieveTest',
+                request_serializer=ondewo_dot_nlu_dot_test__pb2.Test.SerializeToString,
+                response_deserializer=ondewo_dot_nlu_dot_test__pb2.Test.FromString,
+                )
         self.SendTest = channel.unary_unary(
                 '/SimpleService/SendTest',
                 request_serializer=ondewo_dot_nlu_dot_test__pb2.Test.SerializeToString,
@@ -24,6 +29,12 @@ class SimpleServiceStub(object):
 class SimpleServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
+    def RecieveTest(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def SendTest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -33,6 +44,11 @@ class SimpleServiceServicer(object):
 
 def add_SimpleServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'RecieveTest': grpc.unary_unary_rpc_method_handler(
+                    servicer.RecieveTest,
+                    request_deserializer=ondewo_dot_nlu_dot_test__pb2.Test.FromString,
+                    response_serializer=ondewo_dot_nlu_dot_test__pb2.Test.SerializeToString,
+            ),
             'SendTest': grpc.unary_unary_rpc_method_handler(
                     servicer.SendTest,
                     request_deserializer=ondewo_dot_nlu_dot_test__pb2.Test.FromString,
@@ -47,6 +63,23 @@ def add_SimpleServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class SimpleService(object):
     """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def RecieveTest(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/SimpleService/RecieveTest',
+            ondewo_dot_nlu_dot_test__pb2.Test.SerializeToString,
+            ondewo_dot_nlu_dot_test__pb2.Test.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def SendTest(request,

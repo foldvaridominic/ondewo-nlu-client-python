@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x15ondewo/nlu/test.proto\"\x14\n\x04Test\x12\x0c\n\x04name\x18\x01 \x01(\t2)\n\rSimpleService\x12\x18\n\x08SendTest\x12\x05.Test\x1a\x05.Testb\x06proto3'
+  serialized_pb=b'\n\x15ondewo/nlu/test.proto\"\x14\n\x04Test\x12\x0c\n\x04name\x18\x01 \x01(\t2F\n\rSimpleService\x12\x1b\n\x0bRecieveTest\x12\x05.Test\x1a\x05.Test\x12\x18\n\x08SendTest\x12\x05.Test\x1a\x05.Testb\x06proto3'
 )
 
 
@@ -76,12 +76,22 @@ _SIMPLESERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=47,
-  serialized_end=88,
+  serialized_end=117,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='RecieveTest',
+    full_name='SimpleService.RecieveTest',
+    index=0,
+    containing_service=None,
+    input_type=_TEST,
+    output_type=_TEST,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
   _descriptor.MethodDescriptor(
     name='SendTest',
     full_name='SimpleService.SendTest',
-    index=0,
+    index=1,
     containing_service=None,
     input_type=_TEST,
     output_type=_TEST,
