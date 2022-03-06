@@ -97,3 +97,97 @@ class SimpleService(object):
             ondewo_dot_nlu_dot_test__pb2.Test.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class NewSimpleServiceStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.NewRecieveTest = channel.unary_unary(
+                '/NewSimpleService/NewRecieveTest',
+                request_serializer=ondewo_dot_nlu_dot_test__pb2.NewTest.SerializeToString,
+                response_deserializer=ondewo_dot_nlu_dot_test__pb2.NewTest.FromString,
+                )
+        self.NewSendTest = channel.unary_unary(
+                '/NewSimpleService/NewSendTest',
+                request_serializer=ondewo_dot_nlu_dot_test__pb2.NewTest.SerializeToString,
+                response_deserializer=ondewo_dot_nlu_dot_test__pb2.NewTest.FromString,
+                )
+
+
+class NewSimpleServiceServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def NewRecieveTest(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def NewSendTest(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_NewSimpleServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'NewRecieveTest': grpc.unary_unary_rpc_method_handler(
+                    servicer.NewRecieveTest,
+                    request_deserializer=ondewo_dot_nlu_dot_test__pb2.NewTest.FromString,
+                    response_serializer=ondewo_dot_nlu_dot_test__pb2.NewTest.SerializeToString,
+            ),
+            'NewSendTest': grpc.unary_unary_rpc_method_handler(
+                    servicer.NewSendTest,
+                    request_deserializer=ondewo_dot_nlu_dot_test__pb2.NewTest.FromString,
+                    response_serializer=ondewo_dot_nlu_dot_test__pb2.NewTest.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'NewSimpleService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class NewSimpleService(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def NewRecieveTest(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/NewSimpleService/NewRecieveTest',
+            ondewo_dot_nlu_dot_test__pb2.NewTest.SerializeToString,
+            ondewo_dot_nlu_dot_test__pb2.NewTest.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def NewSendTest(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/NewSimpleService/NewSendTest',
+            ondewo_dot_nlu_dot_test__pb2.NewTest.SerializeToString,
+            ondewo_dot_nlu_dot_test__pb2.NewTest.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

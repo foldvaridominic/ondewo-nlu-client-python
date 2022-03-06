@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x15ondewo/nlu/test.proto\"\x14\n\x04Test\x12\x0c\n\x04name\x18\x01 \x01(\t2F\n\rSimpleService\x12\x1b\n\x0bRecieveTest\x12\x05.Test\x1a\x05.Test\x12\x18\n\x08SendTest\x12\x05.Test\x1a\x05.Testb\x06proto3'
+  serialized_pb=b'\n\x15ondewo/nlu/test.proto\"\x14\n\x04Test\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x17\n\x07NewTest\x12\x0c\n\x04name\x18\x03 \x01(\t2F\n\rSimpleService\x12\x1b\n\x0bRecieveTest\x12\x05.Test\x1a\x05.Test\x12\x18\n\x08SendTest\x12\x05.Test\x1a\x05.Test2[\n\x10NewSimpleService\x12$\n\x0eNewRecieveTest\x12\x08.NewTest\x1a\x08.NewTest\x12!\n\x0bNewSendTest\x12\x08.NewTest\x1a\x08.NewTestb\x06proto3'
 )
 
 
@@ -56,7 +56,40 @@ _TEST = _descriptor.Descriptor(
   serialized_end=45,
 )
 
+
+_NEWTEST = _descriptor.Descriptor(
+  name='NewTest',
+  full_name='NewTest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='NewTest.name', index=0,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=47,
+  serialized_end=70,
+)
+
 DESCRIPTOR.message_types_by_name['Test'] = _TEST
+DESCRIPTOR.message_types_by_name['NewTest'] = _NEWTEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Test = _reflection.GeneratedProtocolMessageType('Test', (_message.Message,), {
@@ -65,6 +98,13 @@ Test = _reflection.GeneratedProtocolMessageType('Test', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:Test)
   })
 _sym_db.RegisterMessage(Test)
+
+NewTest = _reflection.GeneratedProtocolMessageType('NewTest', (_message.Message,), {
+  'DESCRIPTOR' : _NEWTEST,
+  '__module__' : 'ondewo.nlu.test_pb2'
+  # @@protoc_insertion_point(class_scope:NewTest)
+  })
+_sym_db.RegisterMessage(NewTest)
 
 
 
@@ -75,8 +115,8 @@ _SIMPLESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=47,
-  serialized_end=117,
+  serialized_start=72,
+  serialized_end=142,
   methods=[
   _descriptor.MethodDescriptor(
     name='RecieveTest',
@@ -102,5 +142,41 @@ _SIMPLESERVICE = _descriptor.ServiceDescriptor(
 _sym_db.RegisterServiceDescriptor(_SIMPLESERVICE)
 
 DESCRIPTOR.services_by_name['SimpleService'] = _SIMPLESERVICE
+
+
+_NEWSIMPLESERVICE = _descriptor.ServiceDescriptor(
+  name='NewSimpleService',
+  full_name='NewSimpleService',
+  file=DESCRIPTOR,
+  index=1,
+  serialized_options=None,
+  create_key=_descriptor._internal_create_key,
+  serialized_start=144,
+  serialized_end=235,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='NewRecieveTest',
+    full_name='NewSimpleService.NewRecieveTest',
+    index=0,
+    containing_service=None,
+    input_type=_NEWTEST,
+    output_type=_NEWTEST,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='NewSendTest',
+    full_name='NewSimpleService.NewSendTest',
+    index=1,
+    containing_service=None,
+    input_type=_NEWTEST,
+    output_type=_NEWTEST,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_NEWSIMPLESERVICE)
+
+DESCRIPTOR.services_by_name['NewSimpleService'] = _NEWSIMPLESERVICE
 
 # @@protoc_insertion_point(module_scope)
