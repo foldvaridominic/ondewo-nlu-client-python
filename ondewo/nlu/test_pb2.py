@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x15ondewo/nlu/test.proto\"\x14\n\x04Test\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x17\n\x07NewTest\x12\x0c\n\x04name\x18\x02 \x01(\t2F\n\rSimpleService\x12\x1b\n\x0bRecieveTest\x12\x05.Test\x1a\x05.Test\x12\x18\n\x08SendTest\x12\x05.Test\x1a\x05.Test2[\n\x10NewSimpleService\x12$\n\x0eNewRecieveTest\x12\x08.NewTest\x1a\x08.NewTest\x12!\n\x0bNewSendTest\x12\x08.NewTest\x1a\x08.NewTestb\x06proto3'
+  serialized_pb=b'\n\x15ondewo/nlu/test.proto\"\x14\n\x04Test\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x17\n\x07NewTest\x12\x0c\n\x04name\x18\x03 \x01(\t2F\n\rSimpleService\x12\x1b\n\x0bRecieveTest\x12\x05.Test\x1a\x05.Test\x12\x18\n\x08SendTest\x12\x05.Test\x1a\x05.Test2[\n\x10NewSimpleService\x12$\n\x0eNewRecieveTest\x12\x08.NewTest\x1a\x08.NewTest\x12!\n\x0bNewSendTest\x12\x08.NewTest\x1a\x08.NewTestb\x06proto3'
 )
 
 
@@ -67,7 +67,7 @@ _NEWTEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='name', full_name='NewTest.name', index=0,
-      number=2, type=9, cpp_type=9, label=1,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
